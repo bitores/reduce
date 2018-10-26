@@ -42,4 +42,9 @@ var obj = {
     obj.reduce("a.b") // {c:{d:1,e:null}}
 
     obj.reduce("d") // null
+
+    // json 按键排序
+    console.log(Object.sort(obj))
+
+    console.log(JSON.stringify(obj.sort()))
 ```
