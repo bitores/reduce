@@ -6,45 +6,40 @@ Gets the value of a key in Json, or NULL
 #### usage
 ```
 var obj = {
-      a: {
-        b: {
-          c: {
-            d: 1,
-            e: null
-          }
-        }
+  a: {
+    b: {
+      c: {
+        d: 1,
+        e: null
       }
-    };
+    }
+  }
+};
 
 
 
-    "a".reduce(obj); // {b:{c:{d:1,e:null}}}
+"a".reduce(obj); // {b:{c:{d:1,e:null}}}
 
-    "a.b.c".reduce(obj); // {d:1,e:null}
+"a.b.c".reduce(obj); // {d:1,e:null}
 
-    "a.b.c.d".reduce(obj); // 1
+"a.b.c.d".reduce(obj); // 1
 
-    "a.b.c.d.e".reduce(obj); // null
+"a.b.c.d.e".reduce(obj); // null
 
-    "".reduce(obj); // null
+"".reduce(obj); // null
 
-    "".reduce(); // null
+"".reduce(); // null
 
-    "".reduce(""); //null
+"".reduce(""); //null
 
 
-    obj.reduce() //null
+obj.reduce() //null
 
-    obj.reduce(null) //null
-    
-    obj.reduce("") // null
+obj.reduce(null) //null
 
-    obj.reduce("a.b") // {c:{d:1,e:null}}
+obj.reduce("") // null
 
-    obj.reduce("d") // null
+obj.reduce("a.b") // {c:{d:1,e:null}}
 
-    // json 按键排序
-    console.log(Object.sort(obj))
-
-    console.log(JSON.stringify(obj.sort()))
+obj.reduce("d") // null
 ```
