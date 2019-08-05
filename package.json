@@ -1,6 +1,6 @@
 {
   "name": "json-deepkey-filter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gets the value of a key in Json, or NULL",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/bitores/reduce.git"
   },
+  "keywords": [
+    "reduce",
+    "deep key",
+    "fliter key"
+  ],
   "author": "bitores",
   "email": "huangzhengjie@dingtalk.com",
   "license": "ISC",

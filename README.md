@@ -6,16 +6,20 @@ Gets the value of a key in Json, or NULL
 功能拓展在 String, Object ,源码如下
 
 ```js
-String.prototype.reduce = function (obj) {
-  return this.split('.').reduce((ret, item) => {
+String.prototype.reduce = function (obj, initialValue = null) {
+  let ret = this.split('.').reduce((ret, item) => {
     if (ret == null || ret[item] == null) return null;
     return ret[item]
   }, obj)
+
+  if (ret === null) return initialValue;
+  return ret;
 }
 
-Object.prototype.reduce = function (t) {
+
+Object.prototype.reduce = function (t, initialValue=null) {
   t = new String(t)
-  return String.prototype.reduce.call(t, this);
+  return String.prototype.reduce.call(t, this, initialValue);
 }
 ```
 
